@@ -39,7 +39,7 @@ public class BookManager implements BookService {
         return new SuccessDataResult<Book>(this.bookDao.getByBookName(bookName),"Veriler listelendi");
     }
 
-    @Override
+    /*@Override
     public DataResult<Book> getByBookNameAndCategory(String bookName, int categoryId) {
         return new SuccessDataResult<Book>(this.bookDao.getByBookNameAndCategory(bookName,categoryId),"Veriler listelendi");
     }
@@ -62,5 +62,5 @@ public class BookManager implements BookService {
     @Override
     public DataResult<List<Book>> getByProductNameStartsWith(String bookName) {
         return new SuccessDataResult<List<Book>>(this.bookDao.getByProductNameStartsWith(bookName),"Veriler listelendi");
-    }
+    }*/
 }

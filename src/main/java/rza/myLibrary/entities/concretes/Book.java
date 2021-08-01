@@ -1,5 +1,7 @@
 package rza.myLibrary.entities.concretes;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +14,7 @@ import javax.persistence.*;
 @Table(name = "books")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","books"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Book {
     @Id
     @GeneratedValue
@@ -26,7 +28,8 @@ public class Book {
     @Column(name = "author")
     private String author;
 
-    @ManyToOne
+    @ManyToOne()
+    @JsonBackReference
     @JoinColumn(name="category_id")
     private Category category;
 
